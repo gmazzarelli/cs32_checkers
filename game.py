@@ -3,7 +3,7 @@ from typing import Tuple, List
 
 class Player(Enum):
     RED = 1
-    BLACK = 2
+    BLUE = 2
 
 Coordinate = Tuple[int, int]
 Piece = Coordinate
@@ -12,8 +12,8 @@ Moves = List[Coordinate]
 BOARD_SIZE = 8
 RED_CIRCLE = u'\033[91m\u25CF\033[0m'
 RED_HEART = u'\033[91m\u2665\033[0m'
-BLACK_CIRCLE = u'\033[94m\u25CF\033[0m'
-BLACK_HEART = u'\033[94m\u2665\033[0m'
+BLUE_CIRCLE = u'\033[94m\u25CF\033[0m'
+BLUE_HEART = u'\033[94m\u2665\033[0m'
 BLACK_SQUARE = u'\u25A0'
 WHITE_SQUARE = u'\u25A1' 
 
@@ -31,20 +31,20 @@ class Game:
                 if (i+j) % 2 == 0:
                     self.red_pieces.append((i,j))
 
-        # Instantiate black's pieces
-        self.black_pieces = []
-        self.black_kings = []
+        # Instantiate blue's pieces
+        self.blue_pieces = []
+        self.blue_kings = []
         for i in range(self.size-3, self.size):
             for j in range(self.size):
                 if (i+j) % 2 == 0:
-                    self.black_pieces.append((i, j))
+                    self.blue_pieces.append((i, j))
 
     def opponent(self) -> Player:
         """
         Returns:
             The opponent player with context of the game's current player.
         """
-        return Player.RED if self.curr_player == Player.BLACK else Player.BLACK
+        return Player.RED if self.curr_player == Player.BLUE else Player.BLUE
 
     def get_pieces(self, player: Player):
         """
@@ -53,11 +53,11 @@ class Game:
         if player == Player.RED:
             pieces = self.red_pieces
             kings = self.red_kings
-            opponent_pieces = self.black_pieces
-            opponent_kings = self.black_kings
+            opponent_pieces = self.blue_pieces
+            opponent_kings = self.blue_kings
         else:
-            pieces = self.black_pieces
-            kings = self.black_kings
+            pieces = self.blue_pieces
+            kings = self.blue_kings
             opponent_pieces = self.red_pieces
             opponent_kings = self.red_kings
         
@@ -244,14 +244,10 @@ class Game:
                     opp_kings.remove(jumped_piece)
                 piece = move # next piece in jump
 
-            print(piece, player)
-
             # If piece is in the back line.. promote it
-            if move[0] == 0 and player == Player.BLACK:
-                print('making black king')
+            if move[0] == 0 and player == Player.BLUE:
                 kings.append(piece)
             elif move[0] == 7 and player == Player.RED:
-                print('making red king')
                 kings.append(piece)
             
             # Print the board with every move
@@ -259,10 +255,10 @@ class Game:
             
     def is_game_over(self) -> bool:
         if not self.red_pieces:
-            print("Black wins!")
+            print("Blue wins!")
             return True
         
-        if not self.black_pieces:
+        if not self.blue_pieces:
             print("Red wins!")
             return True
 
@@ -295,11 +291,11 @@ class Game:
                 elif coord in self.red_pieces:
                     print(RED_CIRCLE, end=' ')
                 
-                # Player BLACK pieces
-                elif coord in self.black_kings:
-                    print(BLACK_HEART, end=' ')
-                elif coord in self.black_pieces:
-                    print(BLACK_CIRCLE, end=' ')
+                # Player BLUE pieces
+                elif coord in self.blue_kings:
+                    print(BLUE_HEART, end=' ')
+                elif coord in self.blue_pieces:
+                    print(BLUE_CIRCLE, end=' ')
 
                 # Empty spaces
                 else:

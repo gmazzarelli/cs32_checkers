@@ -17,7 +17,7 @@ def main():
         print('Connected by', addr)
 
         # Have each player maintain a Checkers state machine
-        checkers = Game(Player.BLACK)
+        checkers = Game(Player.BLUE)
 
         with conn2client:
             while True:   # message processing loop
