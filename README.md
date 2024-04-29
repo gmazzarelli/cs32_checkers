@@ -12,7 +12,7 @@ Now, run server.py first, then client.py subsequently.
 
 ### Playing the Game
 * Selecting a piece
-  * You select pieces/moves via the coordinate system. For (3,7) type in 3,7. Note, coordinates are passed in (y,x). Here is an example:
+  * You select pieces/moves via the coordinate system. For (3,7) type in 3,7. Note, coordinates are passed in (x,y). Note: x is the number in the vertical column on the left, and y is the number in the horizontal row at the top.  Here is an example:
 
 <img src="example.jpg" alt="Alt Text" style="max-width=100px;">
    
