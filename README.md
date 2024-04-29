@@ -14,7 +14,7 @@ Now, run server.py first, then client.py subsequently.
 * Selecting a piece
   * You select pieces/moves via the coordinate system. For (3,7) type in 3,7. Note. Here is an example:
 
-<img src="example.jpg" alt="Alt Text" style="max-width100px;">
+<img src="example.jpg" alt="Alt Text" style="max-width=100px;">
    
 
 
