@@ -244,11 +244,13 @@ class Game:
                     opp_kings.remove(jumped_piece)
                 piece = move # next piece in jump
 
+            print(piece, player)
+
             # If piece is in the back line.. promote it
-            if piece[0] == 0 and player == Player.BLACK:
+            if move[0] == 0 and player == Player.BLACK:
                 print('making black king')
                 kings.append(piece)
-            elif piece[0] == 7 and player == Player.RED:
+            elif move[0] == 7 and player == Player.RED:
                 print('making red king')
                 kings.append(piece)
             
