@@ -13,6 +13,7 @@ Now, run server.py first, then client.py subsequently.
 ### Playing the Game
 * Selecting a piece
   * You select pieces/moves via the coordinate system. For (3,7) type in 3,7. Note. Here is an example:
+![Example](example.jpeg)
    
 
 
