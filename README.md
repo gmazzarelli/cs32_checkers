@@ -4,7 +4,13 @@ A distributed checkers in-terminal game for our cs32 final project.
 ## Instructions
 
 ### Connections
-Go to https://github.com/gmazzarelli/cs32_checkers/edit/main/ to download the the repository onto your local computer(s). 
+Go to https://github.com/gmazzarelli/cs32_checkers/edit/main/ to download the the repository onto your local computer(s).
+
+Link to video where we play the game:
+https://drive.google.com/file/d/1m4K4yOfht0QLa_V-RZXiUkGgY1tyB9u3/view?usp=sharing
+
+Video Explanation:
+https://drive.google.com/file/d/1LcOjCsdJ7KYaCTnhyvyXg76_aK26Z7Tq/view?usp=sharing
 
 First, if you want to play on multiple computers, look up the IP address on the host computer. Then, in server.py and client.py, you can put this IP address in the host variable at the top. If you want to play on the same computer, just put this as the localhost ip '127.0.0.1'. Just make sure they both have the same port in the files. 
 
